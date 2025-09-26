@@ -29,7 +29,7 @@ Sistema de gestion de inventario básico tipo ecommerce desarrollado en Spring B
 - Maven 3.6+
 - MariaDB 10.4+ (o MySQL 8.0+)
 
-## Instalación
+### Instalación
 
 1. **Clonar el repositorio**
    ```bash
