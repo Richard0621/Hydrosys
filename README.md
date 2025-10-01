@@ -51,6 +51,7 @@ Sistema de gestion de inventario básico tipo ecommerce desarrollado en Spring B
    ```
 
 4. **Instalar dependencias y ejecutar**
+   Puede utilizar un IDE como IntelliJ IDEA, Visual Code con las extension de java y spring boot, o directamente por consola con Maven y Java instalado.
    ```bash
    mvn clean install
    mvn spring-boot:run
