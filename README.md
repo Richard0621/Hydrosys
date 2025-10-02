@@ -57,6 +57,17 @@ Sistema de gestion de inventario básico tipo ecommerce desarrollado en Spring B
    mvn spring-boot:run
    ```
 
+   Si piensan editar código, para evitar problemas se instala el intelliJ y se siguen estos pasos:
+   - Instalar IntelliJ
+   - Clonar repositorio
+   - Instalar la base de datos (mariadb)
+     - Iniciar el servicio y crear una base de datos (CREATE DATABASE hydrosys;)
+   - Abrir el proyecto con intelliJ
+   - Revisar la version de java y asegurar colocar JDK 23
+   - Agregar el archivo .env con los datos necesarios
+   - Asegurar que la extension de Loombok este funcionando (dar en permitir)
+   - Una vez cargado todo, RUN HydrosysApplication
+
 ### Configuración de Base de Datos
 
 ```properties
