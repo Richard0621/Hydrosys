@@ -15,7 +15,6 @@ public class ProductoDTO {
     @NotBlank(message = "El nombre del producto es obligatorio")
     private String nombre;
 
-    @NotBlank(message = "Número lote requerido ")
     private Long idLote;
 
     @NotNull(message = "El precio es obligatorio")
