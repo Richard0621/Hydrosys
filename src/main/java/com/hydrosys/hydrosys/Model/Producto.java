@@ -47,6 +47,8 @@ public class Producto {
 
     private String descripcion;
 
+    private String imagenUrl;
+
     @OneToMany(mappedBy = "producto")
     @JsonIgnore
     private List<DetallePedido> detallesPedidos;

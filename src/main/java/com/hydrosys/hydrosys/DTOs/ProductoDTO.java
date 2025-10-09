@@ -17,6 +17,8 @@ public class ProductoDTO {
 
     private Long idLote;
 
+    private String imagenUrl;
+
     @NotNull(message = "El precio es obligatorio")
     @DecimalMin(value = "0.0", inclusive = false, message = "El precio debe ser mayor que cero")
     private BigDecimal precio;

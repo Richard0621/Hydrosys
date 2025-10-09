@@ -41,6 +41,7 @@ public class ProductoServiceImpl {
         Producto producto = new Producto();
         producto.setNombre(dto.getNombre());
         producto.setPrecio(dto.getPrecio());
+        producto.setImagenUrl(dto.getImagenUrl());
         producto.setStock(dto.getStock());
         producto.setDescripcion(dto.getDescripcion());
         producto.setCategoria(categoria);
@@ -83,6 +84,7 @@ public class ProductoServiceImpl {
 
         // Actualizar otros campos
         if (dto.getNombre() != null) producto.setNombre(dto.getNombre());
+        if (dto.getImagenUrl() != null) producto.setImagenUrl(dto.getImagenUrl());
         if (dto.getPrecio() != null) producto.setPrecio(dto.getPrecio());
         if (dto.getStock() != null) producto.setStock(dto.getStock());
         if (dto.getDescripcion() != null) producto.setDescripcion(dto.getDescripcion());
