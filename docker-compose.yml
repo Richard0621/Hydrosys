@@ -1,0 +1,41 @@
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: hydrosys-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_DATABASE=hydrosys
+    ports:
+      - "3306:3306"
+    volumes:
+      # Volumen de datos real de MariaDB
+      - mariadb_data:/var/lib/mysql
+      # Script de inicialización opcional (si lo tienes)
+      # Asegúrate de que ./databases/init.sql exista
+      - ./databases/init.sql:/docker-entrypoint-initdb.d/init.sql:z
+    networks:
+      - hydrosys-network
+
+  hydrosys-app:
+    build: .
+    container_name: hydrosys-app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/hydrosys?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin123
+      - SERVER_PORT=8080
+    depends_on:
+      - mariadb
+    networks:
+      - hydrosys-network
+    restart: unless-stopped
+
+networks:
+  hydrosys-network:
+    driver: bridge
+
+volumes:
+  mariadb_data:
+
